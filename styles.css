@@ -61,7 +61,8 @@ h1, h2, h3, h4, h5, h6 { padding-bottom: 0.8em; }
 table td { vertical-align: top; }
 table th { vertical-align: middle; }
 
-ol { padding: 0 0 1.0em 20px; list-style-type: decimal; }
+ol { padding: 0 0 1.0em 0; list-style-type: none; counter-reset: li; }
+ol > li:before { position: absolute; margin: 3px 0 0 -26px; content: counter(li); counter-increment: li; }
 ol ol, ol ul { padding-bottom: 0; }
 ul { padding: 0 0 1.0em 20px; list-style-type: disc; }
 ul ol, ul ul { padding-bottom: 0; }
@@ -71,12 +72,14 @@ ul>li>ul ul { list-style-type: square; }
 p { padding-bottom: 1.0em; }
 blockquote { width: 70%; padding-bottom: 1.0em; margin: 0 auto; }
 
+.line4 li:nth-child(4n) { margin-bottom: 2em; }
+
 
 
 
 /** Colors & Typography **/
 /** color, background (color, image, repeat, attachment, position), font (style, variant, weight, size, family), line-height, text (indent, align, decoration, transform), letter-spacing, word-spacing, white-space, cursor **/
-body { color: hsl(218, 41%, 30%); background: #fff; font-family: 'Ledger', serif; font-size: 0.9em; }
+body { color: hsl(218, 41%, 30%); background: #fff; font-family: 'Ledger', serif; font-size: 0.9em; line-height: 1.5; }
 
 sup { font-size: 0.8em; }
 sub { font-size: 0.8em; }
@@ -86,6 +89,8 @@ h1, h2, h3 { font-size: 1.76em; }
 h4 { font-size: 1.5em; }
 h5 { font-size: 1.3em; }
 h6 { font-size: 1.1em; }
+
+ol > li:before { color: hsl(218, 41%, 80%); font-size: 0.75em; font-style: italic; }
 
 
 
